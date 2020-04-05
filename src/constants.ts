@@ -6,7 +6,7 @@ export const LAYOUT_WIDTH = 920;
 type keys = 'development' | 'production';
 export const BASE_URL = {
   development: 'http://localhost:1234',
-  production: 'https://covid19-support.info',
+  production: 'http://vs-covid19.now.sh',
 }[(process.env.NODE_ENV as keys) || 'development'];
 
 export const Meta = {
