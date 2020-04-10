@@ -8,11 +8,11 @@ import { BASE_URL, Meta } from '../constants';
 
 const SearchBox: FunctionalComponent = () => {
   const { word, handleSetWord } = AppContainer.useContainer();
-  const handleChangeWord = (
-    e: h.JSX.TargetedEvent<HTMLInputElement, InputEvent>,
-  ): void => {
-    const value = (e.target as HTMLInputElement)?.value;
-    handleSetWord(value === '' ? null : value);
+  const handleKeyDown = (e: KeyboardEvent): void => {
+    if (e.keyCode === 13) {
+      const value = (e.target as HTMLInputElement)?.value;
+      handleSetWord(value === '' ? null : value);
+    }
   };
   return (
     <Container>
@@ -34,7 +34,7 @@ const SearchBox: FunctionalComponent = () => {
           id="searchbox"
           placeholder="検索する単語をご入力ください"
           value={word}
-          onChange={handleChangeWord}
+          onKeyDown={handleKeyDown}
         />
         <span class="sitedesc">
           企業等による新型コロナウイルス感染症対策支援サービスをまとめました
