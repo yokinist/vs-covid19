@@ -33,7 +33,7 @@ jobs:
         uses: peter-evans/create-pull-request@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: [Scheduled] update data
+          commit-message: update data
           labels: automated
           branch: ci/update-data
           branch-suffix: timestamp
