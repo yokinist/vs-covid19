@@ -96,7 +96,7 @@ const PageContainer = styled.div`
     > h1 {
       margin: 0;
       width: 100vw;
-      padding: 30px 0 20px;
+      padding: 30px 0 36px;
       color: white;
       text-align: center;
       background-color: ${Colors.purple};
