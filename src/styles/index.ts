@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-
+import { Colors } from '../shared';
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
@@ -25,13 +25,15 @@ const GlobalStyle = createGlobalStyle`
     dl,
     dd {
         margin: 0;
+        color: ${Colors.textBlack};
     }
     body {
         min-height: 100vh;
         scroll-behavior: smooth;
         text-rendering: optimizeSpeed;
         line-height: 1.5;
-        font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+        color: ${Colors.textBlack};
     }
     ul,
     ol {
