@@ -1,4 +1,5 @@
 import { h, FunctionalComponent } from 'preact';
+import { Link } from 'preact-router/match';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import { AppContainer } from '../containers';
@@ -37,8 +38,6 @@ const SearchBox: FunctionalComponent = () => {
           onKeyDown={handleKeyDown}
         />
         <span class="sitedesc">
-          企業等による新型コロナウイルス感染症対策支援サービスをまとめました
-          <br />
           （出典:
           <a
             href="https://docs.google.com/spreadsheets/d/1IiHUk3D_b6e5BfqFG3ZBxQ8X-QVACdY7CeQeG6C7S1w/"
@@ -48,6 +47,8 @@ const SearchBox: FunctionalComponent = () => {
             政府オープンデータ
           </a>
           )
+          <br />
+          <Link href="/about">このサイトについて</Link>
           <div className="share">
             <div>
               <a
@@ -188,7 +189,7 @@ const Container = styled.div`
       }
       > .sitedesc {
         padding: 0 20px;
-        font-size: 9px;
+        font-size:11px;
         margin-bottom: 30px;
       }
     }
