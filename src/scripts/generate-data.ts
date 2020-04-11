@@ -1,0 +1,24 @@
+import * as fs from 'fs';
+import axios from 'axios';
+import { getCSVUrl, SHEET_KEY } from '../constants';
+import { convertCSVToJSON } from '../utils';
+const url = getCSVUrl(SHEET_KEY);
+
+const fetchData = async (): Promise<void> => {
+  try {
+    const { data } = await axios.get(url);
+    fs.promises.writeFile('./src/assets/data/supports.csv', data);
+    const jsonData = convertCSVToJSON(data);
+    fs.promises.writeFile(
+      './src/assets/data/supports.json',
+      JSON.stringify(jsonData),
+    );
+    return Promise.resolve();
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.log(err.response?.text || 'error');
+    return Promise.reject();
+  }
+};
+
+fetchData();
