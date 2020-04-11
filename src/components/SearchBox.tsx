@@ -1,4 +1,5 @@
 import { h, FunctionalComponent } from 'preact';
+import { Link } from 'preact-router/match';
 import styled from 'styled-components';
 import media from 'styled-media-query';
 import { AppContainer } from '../containers';
@@ -8,11 +9,11 @@ import { BASE_URL, Meta } from '../constants';
 
 const SearchBox: FunctionalComponent = () => {
   const { word, handleSetWord } = AppContainer.useContainer();
-  const handleChangeWord = (
-    e: h.JSX.TargetedEvent<HTMLInputElement, InputEvent>,
-  ): void => {
-    const value = (e.target as HTMLInputElement)?.value;
-    handleSetWord(value === '' ? null : value);
+  const handleKeyDown = (e: KeyboardEvent): void => {
+    if (e.keyCode === 13) {
+      const value = (e.target as HTMLInputElement)?.value;
+      handleSetWord(value === '' ? null : value);
+    }
   };
   return (
     <Container>
@@ -34,11 +35,9 @@ const SearchBox: FunctionalComponent = () => {
           id="searchbox"
           placeholder="検索する単語をご入力ください"
           value={word}
-          onChange={handleChangeWord}
+          onKeyDown={handleKeyDown}
         />
         <span class="sitedesc">
-          企業等による新型コロナウイルス感染症対策支援サービスをまとめました
-          <br />
           （出典:
           <a
             href="https://docs.google.com/spreadsheets/d/1IiHUk3D_b6e5BfqFG3ZBxQ8X-QVACdY7CeQeG6C7S1w/"
@@ -48,6 +47,8 @@ const SearchBox: FunctionalComponent = () => {
             政府オープンデータ
           </a>
           )
+          <br />
+          <Link href="/about">このサイトについて</Link>
           <div className="share">
             <div>
               <a
@@ -188,7 +189,7 @@ const Container = styled.div`
       }
       > .sitedesc {
         padding: 0 20px;
-        font-size: 9px;
+        font-size:11px;
         margin-bottom: 30px;
       }
     }
