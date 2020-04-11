@@ -96,7 +96,7 @@ const PageContainer = styled.div`
     > h1 {
       margin: 0;
       width: 100vw;
-      padding: 30px 0 30px;
+      padding: 30px 0 20px;
       color: white;
       text-align: center;
       background-color: ${Colors.purple};
@@ -110,6 +110,7 @@ const PageContainer = styled.div`
         }
         > .subtitle {
           color: ${Colors.white};
+          display: block;
           font-size: 30px;
           font-weight: normal;
           margin-top: -8px;
