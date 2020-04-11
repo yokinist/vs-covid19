@@ -1,8 +1,13 @@
 name: scheduled update data
 
+# on:
+#   schedule:
+#     - cron: 0 6 * * *
+
 on:
-  schedule:
-    - cron: 0 * * * *
+  pull_request:
+    branches:
+      - master
 
 jobs:
   scheduled-update-data:
