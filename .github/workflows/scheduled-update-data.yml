@@ -1,24 +1,14 @@
-name: scheduled update data
-
-# on:
-#   schedule:
-#     - cron: 0 6 * * *
+name: scheduled
 
 on:
-  pull_request:
-    branches:
-      - master
+  schedule:
+    - cron: 0 6 * * *
 
 jobs:
-  scheduled-update-data:
+  update-data:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout on pull_request
-        if: github.event_name == 'pull_request'
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
-
+      - uses: actions/checkout@v2
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
@@ -43,6 +33,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: update data
-          labels: automated
-          branch: ci/update-data
-          branch-suffix: timestamp
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          title: '[Scheduled] update data'
