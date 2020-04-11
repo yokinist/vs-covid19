@@ -4,6 +4,7 @@
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "CommonJS",
+    "typeRoots" : ["./node_modules/@types"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "esModuleInterop": true,
