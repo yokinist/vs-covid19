@@ -5,6 +5,8 @@
     "noImplicitAny": true,
     "module": "CommonJS",
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "target": "es6",
     "jsx": "react",
     "jsxFactory": "h"
