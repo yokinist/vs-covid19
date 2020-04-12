@@ -76,7 +76,7 @@ export const convertCsvToArray = (s: string): string[][] => {
       }
     }
   }
-  if (sb !== null) line.push(sb);
+  if (sb != null) line.push(sb);
   if (line.length > 0) res.push(line);
   return res;
 };
