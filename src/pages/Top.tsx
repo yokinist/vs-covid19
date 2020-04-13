@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from 'preact/hooks';
 import { route } from 'preact-router';
 import { SHEET_URL } from '../constants';
 import { AppContainer } from '../containers';
-import { SearchBox, Content } from '../components';
+import { SearchBox, Content, Header } from '../components';
 import GlobalStyle from '../styles';
 
 type MatchKeys = 'q' | 'targets' | 'categories';
@@ -55,6 +55,7 @@ const Top: FunctionalComponent<RouteProps & ComponentChild> = props => {
     <div>
       <GlobalStyle />
       <SearchBox {...props} />
+      <Header path={props.path} />
       <Content />
     </div>
   );
