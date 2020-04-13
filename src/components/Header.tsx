@@ -109,7 +109,7 @@ const Wrapper = styled.div<StyleProps>`
           display: flex;
           align-items: center;
           ${media.lessThan('small')`
-            font-size: 14px;
+            font-size: 12px;
           `}
           ${customMedia.lessThan('xs')`
             font-size: 12px;
@@ -119,11 +119,19 @@ const Wrapper = styled.div<StyleProps>`
             margin: 0 4px;
             width: 20px;
             height: 20px;
+            ${media.lessThan('small')`
+              width: 18px;
+              height: 18px;
+            `}
             &.small {
               color: ${Colors.white};
               margin: 0 4px;
               width: 14px;
               height: 14px;
+              ${media.lessThan('small')`
+                width: 12px;
+                height: 12px;
+              `}
             }
           }
           color: ${Colors.white};
