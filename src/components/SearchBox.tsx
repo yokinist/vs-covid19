@@ -48,7 +48,6 @@ const SearchBox: FunctionalComponent = () => {
           </a>
           )
           <br />
-          <Link href="/about">このサイトについて</Link>
           <div className="share">
             <div>
               <a
