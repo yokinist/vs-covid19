@@ -34,9 +34,9 @@ $ yarn dev
 - [hrsano645/vs-covid19](https://github.com/hrsano645/vs-covid19)
   - #民間支援情報ナビ 静岡版
   - https://vs-covid19-shizuoka.netlify.com/
-- [codeforyouth/vs-covid19-subsidy](https://github.com/codeforyouth/vs-covid19-subsidy)
+- [codeforyouth/vs-covid19-for-business](https://github.com/codeforyouth/vs-covid19-for-business)
   - VS COVID-19 事業者向け支援情報ナビ
-  - http://vs-covid19.now.sh/
+  - https://covid19-business-support.now.sh/
 - [01mokuba/vs-covid19-line-bot](https://github.com/01mokuba/vs-covid19-line-bot)
   - VS COVID-19 LINE BOT Ver.
   - https://line.me/R/ti/p/%40551efrfb

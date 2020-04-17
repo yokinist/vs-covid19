@@ -8,7 +8,7 @@ import Search from '@material-ui/icons/Search';
 import Description from '@material-ui/icons/Description';
 import NewTab from '@material-ui/icons/OpenInNew';
 import Undo from '@material-ui/icons/Replay';
-import { Colors, customMedia } from '../shared';
+import { Colors, breakPoints } from '../shared';
 
 const Header: FunctionalComponent<{ path: string | undefined }> = props => {
   const scrollToTop = useCallback(() => {
@@ -110,7 +110,7 @@ const Wrapper = styled.div<StyleProps>`
           ${media.lessThan('small')`
             font-size: 12px;
           `}
-          ${customMedia.lessThan('xs')`
+          ${breakPoints.lessThan('xs')`
             font-size: 12px;
           `}
           > svg {
