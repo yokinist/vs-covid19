@@ -25,7 +25,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add -u ./data
-          git commit -m "[Scheduled] update data" || echo "no change"
+          git commit -m "[Scheduled] update data"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
