@@ -8,9 +8,9 @@ const url = getCSVSheetUrl(SHEET_KEY);
 const fetchData = async (): Promise<void> => {
   try {
     const { data } = await axios.get(url);
-    fs.promises.writeFile('./src/assets/data/supports.csv', data);
+    fs.promises.writeFile('./data/supports.csv', data);
     const jsonData = convertCSVToJSON(data);
-    fs.promises.writeFile('./src/assets/data/supports.json', jsonData);
+    fs.promises.writeFile('./data/supports.json', jsonData);
     return Promise.resolve();
   } catch (err) {
     // eslint-disable-next-line no-console
