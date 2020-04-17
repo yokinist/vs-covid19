@@ -14,19 +14,13 @@ jobs:
         with:
           node-version: '10.x'
 
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.cache/yarn
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: /
+          rm -rf node_modules
+          yarn install --frozen-lockfile
 
       - name: Update data
-        run: yarn run generate:data
+        run: yarn generate:data
 
       - name: Commit generated data files
         run: |
