@@ -15,9 +15,7 @@ jobs:
           node-version: '10.x'
 
       - name: Install dependencies
-        run: /
-          rm -rf node_modules
-          yarn install --frozen-lockfile
+        run: yarn install --frozen-lockfile
 
       - name: Update data
         run: yarn generate:data
