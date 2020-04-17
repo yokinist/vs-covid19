@@ -177,6 +177,10 @@ const Container = styled.div`
     align-items: center;
     > .from {
       color: ${Colors.textGray};
+      width: 70%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
     > .url {
       cursor: pointer;
@@ -209,14 +213,14 @@ const Container = styled.div`
     }
     > .bottom {
       padding: 20px;
-      justify-content: center;
       > .from {
         margin-bottom: 12px;
         width: 100%;
-        text-align: center;
+        text-align: left;
       }
       > .url {
         margin-bottom: 8px;
+        margin-left: auto;
       }
     }
   `}

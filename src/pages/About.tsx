@@ -2,6 +2,7 @@ import { h, FunctionalComponent } from 'preact';
 import { Link } from 'preact-router/match';
 import styled from 'styled-components';
 import media from 'styled-media-query';
+import { Header } from '../components';
 import GlobalStyle from '../styles';
 import { Colors } from '../shared';
 import images from '../assets/images/*.png';
@@ -18,6 +19,7 @@ const About: FunctionalComponent = () => {
               <span class="subtitle">#民間支援情報ナビ</span>
             </Link>
           </h1>
+          <Header path="/about" />
           <div className="card">
             <section>
               <h3>本サイトについて</h3>
