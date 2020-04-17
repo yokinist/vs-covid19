@@ -28,11 +28,14 @@ jobs:
       - name: Update data
         run: yarn run generate:data
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v2
+      - name: Commit generated data files
+          run: |
+            git config --local user.email "noreply@github.com"
+            git config --local user.name "GitHub"
+            git add ./data
+            git commit -m "[Scheduled] update data"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: update data
-          committer: GitHub <noreply@github.com>
-          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          title: '[Scheduled] update data'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
