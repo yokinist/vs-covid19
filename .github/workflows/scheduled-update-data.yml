@@ -30,4 +30,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
+          repository: codeforyouth/vs-covid19
           github_token: ${{ secrets.GITHUB_TOKEN }}
