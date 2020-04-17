@@ -22,10 +22,10 @@ jobs:
 
       - name: Commit generated data files
         run: |
-          git config --local user.email "noreply@github.com"
-          git config --local user.name "GitHub"
-          git add ./data
-          git commit -m "[Scheduled] update data"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -u ./data
+          git commit -m "[Scheduled] update data" || echo "no change"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
