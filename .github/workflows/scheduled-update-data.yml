@@ -1,11 +1,11 @@
-name: scheduled
+name: scheduled data updater
 
 on:
   schedule:
     - cron: '*/5 * * * *'
 
 jobs:
-  update-data:
+  main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,8 +24,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -u ./data
-          git commit -m "[Scheduled] update data"
+          git add data
+          git commit -m "[Scheduled] update data" || echo "no commit changes"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
